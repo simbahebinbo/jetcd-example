@@ -35,7 +35,9 @@ public class QuickStart {
             Pair<String, String> customKeyValuePair = Pair.of(customKey, customValue);
             Pair<String, String> customNewKeyValuePair = Pair.of(customKey, customNewValue);
             (new WatchThread(client, customKey)).start();
+            TimeUtil.sleep(1000);
             (new PutThread(client, customKeyValuePair)).start();
+            TimeUtil.sleep(1000);
             (new PutThread(client, customNewKeyValuePair)).start();
             TimeUtil.sleep(1000);
             (new GetThread(client, customKey)).start();
