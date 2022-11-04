@@ -39,6 +39,8 @@ public class QuickStart {
             (new PutThread(client, customNewKeyValuePair)).start();
             TimeUtil.sleep(1000);
             (new GetThread(client, customKey)).start();
+            TimeUtil.sleep(1000);
+            (new DeleteThread(client, customKey)).start();
         } catch (Exception e) {
             log.warn(e.getMessage());
         }
